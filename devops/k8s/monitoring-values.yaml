@@ -20,14 +20,6 @@ prometheus:
         memory: "512Mi"
     # Retention period
     retention: 7d
-    # Storage
-    storageSpec:
-      volumeClaimTemplate:
-        spec:
-          accessModes: ["ReadWriteOnce"]
-          resources:
-            requests:
-              storage: 10Gi
   service:
     type: ClusterIP
 
