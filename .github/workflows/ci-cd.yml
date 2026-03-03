@@ -123,17 +123,17 @@ jobs:
 
       - name: Deploy Backend
         run: |
-          # Update the image in the deployment manifest
-          sed -i "s|YOUR_DOCKERHUB_USERNAME|${{ secrets.DOCKERHUB_USERNAME }}|g" devops/k8s/backend-deployment.yaml
-          sed -i "s|:latest|:${{ github.sha }}|g" devops/k8s/backend-deployment.yaml
           kubectl apply -f devops/k8s/backend-deployment.yaml
+          kubectl set image deployment/backend-deployment \
+            backend=${{ secrets.DOCKERHUB_USERNAME }}/bloggerapp-backend:${{ github.sha }} \
+            -n backend
 
       - name: Deploy Frontend
         run: |
-          # Update the image in the deployment manifest
-          sed -i "s|YOUR_DOCKERHUB_USERNAME|${{ secrets.DOCKERHUB_USERNAME }}|g" devops/k8s/frontend-deployment.yaml
-          sed -i "s|:latest|:${{ github.sha }}|g" devops/k8s/frontend-deployment.yaml
           kubectl apply -f devops/k8s/frontend-deployment.yaml
+          kubectl set image deployment/frontend-deployment \
+            frontend=${{ secrets.DOCKERHUB_USERNAME }}/bloggerapp-frontend:${{ github.sha }} \
+            -n frontend
 
       - name: Verify Deployment
         run: |
@@ -145,3 +145,4 @@ jobs:
           kubectl get pods -A
           echo "=== Services ==="
           kubectl get svc -A
+
