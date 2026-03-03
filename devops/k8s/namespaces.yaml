@@ -1,0 +1,24 @@
+# Kubernetes Namespaces for BloggerApp
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: frontend
+  labels:
+    app: bloggerapp
+    tier: frontend
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: backend
+  labels:
+    app: bloggerapp
+    tier: backend
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+  labels:
+    app: bloggerapp
+    tier: monitoring

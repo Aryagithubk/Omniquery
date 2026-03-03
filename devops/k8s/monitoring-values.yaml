@@ -1,0 +1,108 @@
+# Custom Helm values for kube-prometheus-stack
+# Install with:
+#   helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+#   helm repo update
+#   helm install monitoring prometheus-community/kube-prometheus-stack \
+#     --namespace monitoring \
+#     --create-namespace \
+#     -f monitoring-values.yaml
+
+# --- Prometheus ---
+prometheus:
+  prometheusSpec:
+    # Resource limits tuned for t3.medium
+    resources:
+      requests:
+        cpu: "200m"
+        memory: "256Mi"
+      limits:
+        cpu: "500m"
+        memory: "512Mi"
+    # Retention period
+    retention: 7d
+    # Storage
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 10Gi
+  service:
+    type: ClusterIP
+
+# --- Grafana ---
+grafana:
+  enabled: true
+  adminUser: admin
+  adminPassword: admin  # CHANGE THIS in production!
+  service:
+    type: LoadBalancer
+    port: 3000
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "300m"
+      memory: "256Mi"
+  # Pre-configured datasource
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Prometheus
+          type: prometheus
+          access: proxy
+          url: http://monitoring-kube-prometheus-prometheus:9090
+          isDefault: true
+  # Pre-loaded dashboards
+  dashboardProviders:
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+        - name: default
+          orgId: 1
+          folder: ""
+          type: file
+          disableDeletion: false
+          editable: true
+          options:
+            path: /var/lib/grafana/dashboards/default
+  dashboards:
+    default:
+      kubernetes-cluster:
+        gnetId: 6417
+        revision: 1
+        datasource: Prometheus
+      node-exporter:
+        gnetId: 1860
+        revision: 33
+        datasource: Prometheus
+
+# --- Alertmanager ---
+alertmanager:
+  enabled: true
+  alertmanagerSpec:
+    resources:
+      requests:
+        cpu: "50m"
+        memory: "64Mi"
+      limits:
+        cpu: "100m"
+        memory: "128Mi"
+
+# --- Node Exporter ---
+nodeExporter:
+  enabled: true
+  resources:
+    requests:
+      cpu: "50m"
+      memory: "32Mi"
+    limits:
+      cpu: "100m"
+      memory: "64Mi"
+
+# --- Kube State Metrics ---
+kubeStateMetrics:
+  enabled: true
