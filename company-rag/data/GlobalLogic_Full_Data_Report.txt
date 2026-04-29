@@ -1,0 +1,59 @@
+GLOBAL-LOGIC COMPANY REPORT
+
+1. COMPANY OVERVIEW
+
+GlobalLogic is a leader in digital product engineering services. It helps brands design and build innovative products, platforms, and digital experiences for the modern world.
+- Parent Company: Hitachi, Ltd. (Acquired GlobalLogic in 2021 for ~$9.6 billion).
+- Headquarter: San Jose, California, USA (Global); Noida, Gurgaon, Hyderabad, and Chennai (Major India hubs).
+- Global Presence: Over 400 clients, 30+ countries, and numerous design studios and engineering centers.
+- Founding Year: 2000.
+
+2. FINANCIAL PERFORMANCE (FY 2024-2025)
+
+- Global Revenue Goal: Aiming for $5 billion by 2028.
+- India Revenue (FY25): Approximately ₹2,520 Cr (ending March 31, 2025).
+- CAGR: 22% growth in revenue in the last financial year.
+- Profitability: Targeted Adjusted EBITDA of over $1 billion by 2028 globally.
+
+3. WORK CULTURE & POLICIES
+
+GlobalLogic is known for a "People-First" culture, emphasized by its 5-pillar Employee Value Proposition (EVP):
+- Smart: Seeking talented thinkers and problem solvers.
+- Bold: Encouraging innovation and leaning forward into new challenges.
+- Human: Nurturing an inclusive and sustainable future.
+- Work-Life Balance: High ratings for balance; flexibility in work arrangements (Hybrid/Remote options depending on project).
+- Professional Development: Strong focus on continuous learning, training curriculums, and mentoring.
+- Benefits: Employee reviews highlight free meals/cabs (location-dependent), health insurance, and festive celebrations.
+- Recognition: Awarded "Great Place to Work" in India (2022-2023).
+
+4. SERVICES & TECHNOLOGY CAPABILITIES
+
+The company provides end-to-end digital engineering services:
+- Intelligence Engineering: AI-powered and human-driven systems, including Agentic AI and Physical AI.
+- Experience Design: Through "Method" (a GlobalLogic company), focusing on product strategy and UI/UX.
+- Software Product Engineering: Full-lifecycle product development.
+- Technology Modernization: Cloud migration, legacy system upgrades, and risk reduction.
+- Embedded Systems: IoT, IT/OT transformation, and hardware-software integration.
+
+5. KEY INDUSTRIES SERVED
+
+- Communications & Network Providers
+- Financial Services (Banking, Insurance, Payments)
+- Healthcare & Life Sciences
+- Automotive & Mobility (Connected vehicles)
+- Media & Entertainment
+- Retail & Consumer Goods
+- Industrial & Energy (Digital twins, Industry 4.0)
+
+6. CORE PRINCIPLES & VALUES
+
+- Integrity & Trust: Transparency and candor in all business dealings.
+- Sustainability: Commitment to Hitachi's Environmental Vision (decarbonized society).
+- DEI (Diversity, Equity, & Inclusion): Leadership-level commitment to diverse hiring and inclusive growth.
+- Social Innovation: Leveraging AI and technology to address global environmental and social challenges.
+
+7. LEADERSHIP (INDIA/GLOBAL)
+
+- Global CEO: Nitesh Banga.
+- Managing Director (India): Sumit Sood.
+- Board of Directors (India): Includes Sumit Sood and Rajat Kumar Mehta.

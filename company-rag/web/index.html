@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniQuery AI</title>
+    <meta name="description" content="OmniQuery AI — Multi-Agent intelligence">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=13">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <!-- ── TOP BAR ─────────────────────────────────── -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="brand">
+                <div class="brand-icon">⚡</div>
+                <span class="brand-name">Omni<span>Query</span></span>
+            </div>
+            <span class="top-bar-subtitle">Multi-Agent AI · Documents · Database · Web</span>
+        </div>
+        <div class="top-bar-right" id="user-controls">
+            <span id="role-badge" class="role-badge hidden">USER</span>
+            <button id="logout-btn" class="logout-btn hidden">Sign Out</button>
+        </div>
+    </div>
+
+    <!-- ── CHAT MESSAGES ───────────────────────────── -->
+    <main id="chat-container">
+
+        <!-- WELCOME — centered, full width -->
+        <div class="welcome-message">
+            <div class="welcome-icon">⚡</div>
+            <h2>Hello! I'm <span>OmniQuery</span></h2>
+            <p>Your multi-source AI assistant. Ask me about company policies, employee data, or anything you need to know.</p>
+            <div class="suggestions">
+                <button class="suggestion-chip" id="chip1">What is the remote work policy?</button>
+                <button class="suggestion-chip" id="chip2">How many employees are in Engineering?</button>
+                <button class="suggestion-chip" id="chip3">What are the core collaboration hours?</button>
+                <button class="suggestion-chip" id="chip4">What are the core principles and values?</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ── INPUT AREA ──────────────────────────────── -->
+    <div class="input-area" id="chat-input-area">
+        <form id="query-form">
+            <div class="input-wrapper">
+                <input type="text" id="query-input" placeholder="Ask OmniQuery anything..." autocomplete="off" spellcheck="false">
+                <button type="submit" id="send-btn" aria-label="Send">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </form>
+        <div class="loader" id="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+</div><!-- /app-layout -->
+
+<!-- ── FIXED RIGHT BOT ANIMATION (not a sidebar, just decorative) ── -->
+<div class="bot-panel-right" id="bot-panel-right">
+    <div class="atom-scene">
+        <!-- Three elliptical atom orbit rings -->
+        <div class="atom-ring atom-ring-1"></div>
+        <div class="atom-ring atom-ring-2"></div>
+        <div class="atom-ring atom-ring-3"></div>
+
+        <!-- Robot — pure CSS, no image dependency -->
+        <div class="robot-wrap">
+            <div class="css-robot">
+                <!-- Head -->
+                <div class="r-head">
+                    <div class="r-visor"></div>
+                    <div class="r-ear r-ear-l"></div>
+                    <div class="r-ear r-ear-r"></div>
+                </div>
+                <!-- Neck -->
+                <div class="r-neck"></div>
+                <!-- Body -->
+                <div class="r-body">
+                    <div class="r-chest-ring">
+                        <div class="r-chest-core"></div>
+                    </div>
+                    <!-- Arms -->
+                    <div class="r-arm r-arm-l">
+                        <div class="r-forearm"></div>
+                        <div class="r-hand"></div>
+                    </div>
+                    <div class="r-arm r-arm-r">
+                        <div class="r-forearm"></div>
+                        <div class="r-hand"></div>
+                    </div>
+                </div>
+                <!-- Waist -->
+                <div class="r-waist"></div>
+                <!-- Legs -->
+                <div class="r-legs">
+                    <div class="r-leg r-leg-l">
+                        <div class="r-foot"></div>
+                    </div>
+                    <div class="r-leg r-leg-r">
+                        <div class="r-foot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glow under robot -->
+        <div class="robot-shadow"></div>
+    </div>
+
+    <!-- Status pill -->
+    <div class="bot-status-pill">
+        <span class="status-dot"></span>
+        OmniQuery · Online
+    </div>
+</div>
+
+<script src="/static/js/app.js?v=12"></script>
+</body>
+</html>

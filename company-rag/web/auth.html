@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniQuery AI — Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --orange: #FF6B00;
+            --orange-glow: rgba(255,107,0,0.25);
+            --orange-soft: rgba(255,107,0,0.1);
+            --border-orange: rgba(255,107,0,0.35);
+            --bg: #0a0a0a;
+            --surface: rgba(18,18,18,0.9);
+            --border: rgba(255,255,255,0.08);
+            --text: #F5F5F5;
+            --text-muted: #777;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,107,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,107,0,0.03) 1px, transparent 1px);
+            background-size: 36px 36px;
+            animation: gridScroll 25s linear infinite;
+            z-index: 0;
+        }
+        @keyframes gridScroll {
+            0%   { background-position: 0 0; }
+            100% { background-position: 36px 36px; }
+        }
+
+        /* Left side — brand splash */
+        .auth-splash {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+            border-right: 1px solid var(--border);
+        }
+
+        .splash-orb {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,107,0,0.3), transparent 70%);
+            border: 1.5px solid var(--border-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 54px;
+            box-shadow: 0 0 80px rgba(255,107,0,0.3);
+            animation: floatOrb 4s ease-in-out infinite;
+            position: relative;
+        }
+
+        .splash-orb::after {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,107,0,0.15);
+            animation: ringPulse2 3s ease-out infinite;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-12px); }
+        }
+
+        @keyframes ringPulse2 {
+            0%   { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+
+        .splash-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.03em;
+        }
+
+        .splash-title span { color: var(--orange); }
+
+        .splash-sub {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+
+        .splash-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .splash-tag {
+            font-size: 0.72rem;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: var(--orange-soft);
+            border: 1px solid var(--border-orange);
+            color: var(--orange);
+            font-weight: 500;
+        }
+
+        /* Right side — auth form */
+        .auth-side {
+            width: 460px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-card {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+        }
+
+        .auth-header {
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .auth-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .auth-header p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* Tabs */
+        .auth-tabs {
+            display: flex;
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 4px;
+            margin-bottom: 24px;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 9px;
+            text-align: center;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+
+        .auth-tab.active {
+            background: var(--orange);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(255,107,0,0.35);
+        }
+
+        /* Inputs */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #fff;
+            font-size: 0.88rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--border-orange);
+            box-shadow: 0 0 0 3px var(--orange-glow);
+        }
+
+        .form-group select option { background: #1a1a1a; }
+
+        /* Submit */
+        .auth-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 6px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(255,107,0,0.35);
+            letter-spacing: 0.01em;
+        }
+
+        .auth-btn:hover { background: #FF7A1A; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(255,107,0,0.5); }
+        .auth-btn:active { transform: translateY(0); }
+
+        /* Error */
+        .error-msg {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.25);
+            border-radius: 8px;
+            color: #f87171;
+            font-size: 0.82rem;
+            text-align: center;
+            display: none;
+        }
+
+        .register-fields { display: none; }
+        .register-mode .register-fields { display: block; }
+
+        @media (max-width: 768px) {
+            .auth-splash { display: none; }
+            .auth-side { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left brand panel -->
+    <div class="auth-splash">
+        <div class="splash-orb">⚡</div>
+        <h1 class="splash-title">Omni<span>Query</span> AI</h1>
+        <p class="splash-sub">Multi-agent intelligence for enterprise data — documents, databases, and real-time web.</p>
+        <div class="splash-tags">
+            <span class="splash-tag">📄 DocAgent</span>
+            <span class="splash-tag">🗃️ DBAgent</span>
+            <span class="splash-tag">🌐 WebAgent</span>
+        </div>
+    </div>
+
+    <!-- Right auth panel -->
+    <div class="auth-side">
+        <div class="auth-card" id="auth-container">
+            <div class="auth-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to access OmniQuery</p>
+            </div>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="tab-login">Login</div>
+                <div class="auth-tab" id="tab-register">Register</div>
+            </div>
+
+            <form id="auth-form">
+                <div class="register-fields">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="firstName" placeholder="Enter first name">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="lastName" placeholder="Enter last name">
+                    </div>
+                    <div class="form-group">
+                        <label>Department</label>
+                        <select id="department">
+                            <option value="1">Engineering</option>
+                            <option value="2">Marketing</option>
+                            <option value="3">Sales</option>
+                            <option value="4">Human Resources</option>
+                            <option value="5">Finance</option>
+                            <option value="6">Product</option>
+                            <option value="7">Design</option>
+                            <option value="8">DevOps</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Job Title</label>
+                        <input type="text" id="jobTitle" placeholder="e.g. Software Engineer">
+                    </div>
+                    <div class="form-group">
+                        <label>Salary (₹)</label>
+                        <input type="number" id="salary" value="600000">
+                    </div>
+                    <div class="form-group">
+                        <label>Hire Date</label>
+                        <input type="date" id="hireDate">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="auth-btn" id="auth-submit">Sign In</button>
+                <div class="error-msg" id="auth-error"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>

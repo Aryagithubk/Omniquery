@@ -1,0 +1,49 @@
+GLOBALLOGIC OPERATIONAL POLICIES & GUIDELINES
+
+1. VACATION AND LEAVE POLICY
+
+GlobalLogic typically follows a localized leave policy based on the region of employment. 
+- Earned Leave (EL/PL): Accrued monthly; usually allows for 18-24 days per year.
+- Sick & Casual Leave (SL/CL): Approximately 12 days annually for personal exigencies or illness.
+- Public Holidays: Standard gazetted holidays based on the office location (approx. 10-12 days).
+- Maternity/Paternity Leave: Compliant with statutory laws (e.g., 26 weeks for maternity in India).
+- Approval: All leaves must be applied for through the internal HRMS portal and approved by the reporting manager at least 2 weeks in advance for planned vacations.
+
+2. WORK FROM HOME (WFH) & HYBRID GUIDELINES
+
+GlobalLogic has transitioned to a "Flexible Hybrid" model.
+- Schedule: Most roles require 2-3 days of office presence per week, though this varies by project and client requirements.
+- Infrastructure: Employees are provided with a company laptop. A one-time or monthly internet reimbursement may be applicable depending on the specific contract/level.
+- Core Hours: Employees are expected to be available during the team's core collaboration hours (typically 10:00 AM to 4:00 PM local time).
+- Security: Use of company VPN is mandatory for all remote work to ensure data integrity.
+
+3. EXPENSE REIMBURSEMENT PROCESS
+
+Expenses incurred for official purposes (travel, client meals, certifications) are reimbursed via the internal portal.
+- Submission: Claims must be submitted through the 'Concur' or internal ERP tool.
+- Documentation: Digital copies of valid tax invoices/receipts are mandatory for all claims.
+- Timelines: Claims should ideally be submitted within 30 days of the expense.
+- Approval: Primary approval by the Reporting Manager, followed by Finance Department verification.
+
+4. CODE OF CONDUCT: DRESS CODE
+
+GlobalLogic maintains a "Business Casual" environment.
+- Monday to Thursday: Business casual (collared shirts, polos, chinos, dark jeans, blouses, or ethnic wear).
+- Friday: Casual dress is permitted (T-shirts without offensive graphics, jeans, sneakers).
+- Client Meetings: Professional business attire is expected when representing the company at client sites or during high-stakes virtual meetings.
+
+5. ONBOARDING PROCESS
+
+The "Day 1" experience is designed to integrate new hires seamlessly:
+- Orientation: Introduction to GlobalLogic (a Hitachi Group Company) and the 5-pillar EVP.
+- IT Provisioning: Issuance of hardware, security badges, and credentials.
+- HR Induction: Overview of benefits, insurance enrollment, and payroll setup.
+- Project Shadowing: New hires are typically assigned a 'Buddy' to help navigate the first 30 days.
+
+6. BONUS AND INCENTIVE POLICY
+
+Bonuses are performance-linked and distributed based on both individual and company achievements.
+- Annual Performance Bonus: Typically paid out after the annual appraisal cycle (usually Q1 or Q2 depending on fiscal year alignment).
+- Referral Bonus: Incentives for successful employee referrals once the candidate completes a 90-day probation.
+- Project Excellence Awards: Spot bonuses or quarterly awards for exceptional delivery.
+- Variable Pay: For senior roles, a percentage of the CTC is tied to specific KPIs and Hitachi Group's global performance.
